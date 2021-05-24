@@ -3,10 +3,13 @@ set -e
 files=()
 params=()
 for item in "$@";do
+  echo "Current item: $item"
   if [[ $item == -* ]]
   then
+     echo "is a param"
      params+=($item)  
   else
+     echo "is a file"
      files+=($item)
   fi
 done
