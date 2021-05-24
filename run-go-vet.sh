@@ -18,6 +18,6 @@ pkg=$(go list)
 for dir in $(echo ${files[@]}|xargs -n1 dirname|sort -u); do
   echo "x1-------------------"
   echo $pkg/$dir
-  go vet $pkg/$dir
+  go vet ${params[@]} $pkg/$dir
   echo "x3-------------------"
 done
