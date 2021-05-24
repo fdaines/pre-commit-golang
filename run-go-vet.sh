@@ -4,6 +4,11 @@ files=()
 params=()
 for item in "$@";do
   echo "This is item: $item."
+  if $item then
+     params+=($item)  
+  else
+     files+=($item)
+  fi
 done
   
 pkg=$(go list)
@@ -16,6 +21,9 @@ echo $(echo $@|xargs -n1 dirname)
 echo "4-------------------"
 echo $(echo $@|xargs -n1 dirname|sort -u)
 echo "5-------------------"
+echo $params
+echo $files
+echo "6-------------------"
 for dir in $(echo $@|xargs -n1 dirname|sort -u); do
   echo "x1-------------------"
   echo $pkg/$dir
