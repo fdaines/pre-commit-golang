@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 set -e
+files=()
+params=()
+for item in "$@";do
+  echo "This is item: $item."
+done
+  
 pkg=$(go list)
 echo "1-------------------"
 echo $pkg
