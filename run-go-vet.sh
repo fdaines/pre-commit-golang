@@ -4,7 +4,8 @@ files=()
 params=()
 for item in "$@";do
   echo "This is item: $item."
-  if $item then
+  if [[ $item == -* ]]
+  then
      params+=($item)  
   else
      files+=($item)
