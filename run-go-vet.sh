@@ -20,9 +20,9 @@ echo $pkg
 echo "2-------------------"
 echo $@
 echo "3-------------------"
-echo $params[@]
+echo ${params[@]}
 echo "4-------------------"
-echo $files[@]
+echo ${files[@]}
 echo "5-------------------"
 for dir in $(echo $@|xargs -n1 dirname|sort -u); do
   echo "x1-------------------"
